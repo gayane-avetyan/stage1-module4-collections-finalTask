@@ -12,17 +12,14 @@ public class DeveloperProjectFinder {
                 devProjects.add(el.getKey());
         }
 
-        devProjects.sort(new Comparator<>() {
-            @Override
-            public int compare(String o1, String o2) {
+        devProjects.sort((o1, o2) -> {
 
-                if(o1.length() > o2.length())
-                    return -1;
-                else if(o1.length() < o2.length())
-                    return 1;
-                else
-                    return o2.compareTo(o1);
-            }
+            if(o1.length() > o2.length())
+                return -1;
+            else if(o1.length() < o2.length())
+                return 1;
+            else
+                return o2.compareTo(o1);
         });
 
         return devProjects;
